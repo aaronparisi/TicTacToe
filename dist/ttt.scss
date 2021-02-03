@@ -1,0 +1,99 @@
+$lightBlue: #d3fffc;
+$medBlue: #cafaf7;
+$darkBlue: #acfff9;
+$darkerBlue: #8bfaf2;
+
+$lighterGray: rgb(226, 240, 241);
+$lightGray: rgb(180, 197, 201);
+$medGray: rgb(158, 158, 158);
+$darkGray: rgb(131, 131, 131);
+$darkerGray: rgb(100, 100, 100);
+
+html {
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+  height: 100%;
+  background-color: $lightBlue;
+  color: $medGray;
+}
+
+.nobody-won {
+  background-color: rgba(152, 159, 160, 0.445);
+}
+
+html, button {
+  font-size: 24px;
+  font-family: 'Roboto Slab', serif;
+}
+
+button {
+  border-radius: 5px;
+  z-index: 2;
+}
+button:enabled {
+  background-color: $darkBlue;
+  border: 1px solid  $darkGray;
+  color: $darkGray;
+} 
+button:disabled {
+  background-color: $lighterGray;
+  border: 1px solid  $lightGray;
+  color: $lightGray;
+}
+
+button:hover:enabled {
+  background-color: $darkerBlue;
+  border: 1px solid  $darkerGray;
+  color: $darkerGray;
+  cursor: pointer;
+}
+
+body {
+  flex-grow: 1;
+  position: relative;
+  margin: 50px;
+}
+
+.header {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+}
+
+.grid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 33.3333%;
+  height: 33.3333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.hover-square {
+  background-color: $medBlue;
+}
+
+.square * {
+  height: 100%;
+}
+
+.square:nth-child(3n+1), .square:nth-child(3n+2) {
+  border-right: .5px solid $lightGray;
+}
+
+.square:nth-child(-n+6) {
+  border-bottom: .5px solid $lightGray;
+}
+
+span {
+  // z-index: -1;
+  overflow: hidden;
+}
